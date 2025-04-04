@@ -1,11 +1,10 @@
 #include <algorithm>
 #include <iostream>
 #include <list>
+#include <string>
 
-using namespace std;
-
-void removemore5lenghtstring(list<string>* l) {
-  for (list<string>::iterator itr = l->begin(); itr != l->end();) {
+void removemore5lenghtstring(std::list<std::string>* l) {
+  for (std::list<std::string>::iterator itr = l->begin(); itr != l->end();) {
     if (itr->length() > 4) {
       itr = l->erase(itr);
     } else {
@@ -15,19 +14,19 @@ void removemore5lenghtstring(list<string>* l) {
 }
 
 int main() {
-  list<string> l;
-  string input;
+  std::list<std::string> l;
+  std::string input;
   while (true) {
-    cout << "文字列をを入力(終了: 改行)" << endl;
-    getline(cin, input);
+    std::cout << "文字列をを入力(終了: 改行)" << std::endl;
+    std::getline(std::cin, input);
     if (input == "") break;
     l.push_back(input);
   }
   removemore5lenghtstring(&l);
-  cout << "表示";
+  std::cout << "表示";
   for (auto&& s : l) {
-    cout << s << " ";
+    std::cout << s << " ";
   }
-  cout << endl;
+  std::cout << std::endl;
   return 0;
 }
